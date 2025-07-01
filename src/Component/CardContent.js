@@ -11,13 +11,13 @@ function CardContent({ item }) {
                 <img src={item.img} alt={item.title} className="h-full w-full rounded-lg object-cover" />
             </div>
 
-            <div className="flex lg:flex-row flex-row lg:w-96 w-52 h-auto lg:gap-10 gap-2 justify-between px-2 pt-2">
+            <div className="flex lg:flex-row flex-col lg:w-96 w-52 h-auto lg:gap-10 gap-2 justify-between px-2 pt-2">
                 <div className="relative">
-                    <h2 className="leading-0 font-medium text-gray-700 transition duration-300 opacity-100">
+                    <h2 className="leading-0 font-medium text-gray-700 w-32 transition duration-300 opacity-100 ">
                         {item.title}
                     </h2>
                 </div>
-                <span className="text-sm tracking-wide text-gray-600 text-right">{item.category}</span>
+                <span className="text-xs tracking-wide text-gray-600 text-right">{item.category}</span>
             </div>
         </div>
     );
