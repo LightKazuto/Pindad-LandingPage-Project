@@ -2,20 +2,20 @@ import { useState } from "react";
 import CardContent from "../Component/CardContent";
 
 import LogoPindad from "../Asset/Teal.png";
-import Industrial from "../Asset/Industiral.jpg";
-import Senjata from "../Asset/Senjata.png";
-import Maung from "../Asset/Maung.png";
-import KendaraanMulty from "../Asset/KendaraanMulty.png";
-import Amunisi from "../Asset/Amunisi.png";
 import Litbang from "../Asset/litbang.jpg";
 import Production from "../Asset/production.jpg";
+import KK from "../Asset/kk.png";
+import Senjata from "../Asset/senjata.jpg"
+import Industrial from "../Asset/industrial.jpg";
+import Munisi from "../Asset/munisi.jpg";
+import KMN from "../Asset/kmn.png";
+
 
 function LandingPage() {
     const navigationItems = [
         {
-            img: Maung,
+            img: KK,
             title: "Kendaraan Khusus",
-            link: "",
             id: "001",
             category:
                 "kendaraan yang dirancang untuk tugas tertentu.",
@@ -23,7 +23,7 @@ function LandingPage() {
                 {
                     img: Production,
                     title: "Production",
-                    link: "",
+                    link: "http://pdm.pindad.co.id/engkk",
                     id: "001",
                     category:
                         "Proses menghasilkan produk massal melalui perencanaan, pengolahan, dan pengawasan.",
@@ -31,7 +31,7 @@ function LandingPage() {
                 {
                     img: Litbang,
                     title: "Lit bang",
-                    link: "",
+                    link: "http://pdm.pindad.co.id/bpkk",
                     id: "002",
                     category:
                         "Mengembangkan inovasi produk melalui riset, eksperimen, dan analisis berkelanjutan.",
@@ -41,14 +41,13 @@ function LandingPage() {
         {
             img: Senjata,
             title: <>Senjata <br /><br /></>,
-            link: "",
             id: "002",
             category: "alat untuk menyerang, bertahan, berburu, atau melindungi diri.",
             children: [
                 {
                     img: Production,
                     title: "Production",
-                    link: "",
+                    link: "http://pdm.pindad.co.id/engjat",
                     id: "001",
                     category:
                         "Proses menghasilkan produk massal melalui perencanaan, pengolahan, dan pengawasan.",
@@ -56,7 +55,7 @@ function LandingPage() {
                 {
                     img: Litbang,
                     title: "Lit bang",
-                    link: "",
+                    link: "http://pdm.pindad.co.id/bpjat",
                     id: "002",
                     category:
                         "Mengembangkan inovasi produk melalui riset, eksperimen, dan analisis berkelanjutan.",
@@ -66,14 +65,13 @@ function LandingPage() {
         {
             img: Industrial,
             title: <>Industrial <br /><br /></>,
-            link: "",
             id: "003",
             category: "Proses produksi barang atau jasa dalam skala besar",
             children: [
                 {
                     img: Production,
                     title: "Production",
-                    link: "",
+                    link: "http://pdm.pindad.co.id/engmri",
                     id: "001",
                     category:
                         "Proses menghasilkan produk massal melalui perencanaan, pengolahan, dan pengawasan.",
@@ -81,7 +79,7 @@ function LandingPage() {
                 {
                     img: Litbang,
                     title: "Lit bang",
-                    link: "",
+                    link: "http://pdm.pindad.co.id/bpmri",
                     id: "002",
                     category:
                         "Mengembangkan inovasi produk melalui riset, eksperimen, dan analisis berkelanjutan.",
@@ -89,16 +87,15 @@ function LandingPage() {
             ],
         },
         {
-            img: Amunisi,
+            img: Munisi,
             title: <>Munisi <br /><br /></>,
-            link: "",
             id: "004",
             category: "peluru senjata api, bom, roket, granat, bahan peledak.",
             children: [
                 {
                     img: Production,
                     title: "Production",
-                    link: "",
+                    link: "http://pdm.pindad.co.id/engmu",
                     id: "001",
                     category:
                         "Proses menghasilkan produk massal melalui perencanaan, pengolahan, dan pengawasan.",
@@ -106,7 +103,7 @@ function LandingPage() {
                 {
                     img: Litbang,
                     title: "Lit bang",
-                    link: "",
+                    link: "http://pdm.pindad.co.id/bpmu",
                     id: "002",
                     category:
                         "Mengembangkan inovasi produk melalui riset, eksperimen, dan analisis berkelanjutan.",
@@ -114,29 +111,11 @@ function LandingPage() {
             ],
         },
         {
-            img: KendaraanMulty,
+            img: KMN,
             title: "Kendaraan Multy Nasional",
-            link: "",
             id: "005",
             category: "Kendaraan dari perusahaan global, digunakan di berbagai negara.",
-            children: [
-                {
-                    img: Production,
-                    title: "Production",
-                    link: "",
-                    id: "001",
-                    category:
-                        "Proses menghasilkan produk massal melalui perencanaan, pengolahan, dan pengawasan.",
-                },
-                {
-                    img: Litbang,
-                    title: "Lit bang",
-                    link: "",
-                    id: "002",
-                    category:
-                        "Mengembangkan inovasi produk melalui riset, eksperimen, dan analisis berkelanjutan.",
-                },
-            ],
+            link: "http://pdm.pindad.co.id/kmn",
         },
     ];
 
@@ -149,12 +128,17 @@ function LandingPage() {
     };
 
     const handleParentClick = (item) => {
-        setSelectedParent(item);
-        setSelectedChild(null);
+        if (item.children?.length) {
+            setSelectedParent(item);
+        } else if (item.link) {
+            window.open(item.link, "_blank");
+        }
     };
 
     const handleChildClick = (child) => {
-        setSelectedChild(child);
+        if (child.link) {
+            window.open(child.link, "_blank");
+        }
     };
 
     const handleBack = () => {
@@ -169,7 +153,7 @@ function LandingPage() {
         <div className="flex min-h-screen flex-col lg:flex-row">
 
             {/* Tampilan Sebelah Kiri */}
-            <div className="relative bg-[#283739] flex h-[280px] shrink-0 flex-col items-center justify-center gap-4 p-10 lg:h-screen lg:w-1/3 2xl:w-1/2 xl:w-1/3 lg:items-start lg:justify-start lg:gap-52">
+            <div className="relative bg-[#283739] flex h-[280px] shrink-0 flex-col items-center justify-center gap-4 p-10 lg:h-screen lg:w-1/3 2xl:w-1/2 xl:w-1/3 lg:items-start lg:justify-start lg:gap-[20%]">
                 <img src={LogoPindad} alt="Logo Pindad Persero" className="w-52" />
                 <div className="flex flex-col items-center gap-4 lg:items-start">
                     <h1 className="text-xl font-medium tracking-widest text-[#50C9CE] lg:text-7xl">
@@ -185,7 +169,7 @@ function LandingPage() {
             </div>
 
             {/* Tampilan Sebelah Kanan */}
-            <div className="relative flex min-h-[calc(100vh-260px)] w-full items-center justify-center overflow-x-hidden px-1 py-6 lg:min-h-full">
+            <div className="relative flex min-h-[calc(100vh-260px)] w-full items-center justify-center overflow-x-hidden px-1 pb-20 py-6 lg:h-screen">
 
                 {/* Tampilan Parent Carousel Dinamis */}
                 {!selectedParent && (
