@@ -112,7 +112,7 @@ function LandingPage() {
         },
         {
             img: KMN,
-            title: "Kendaraan Multy Nasional",
+            title: "Kendaraan Multi Nasional",
             id: "005",
             category: "Kendaraan dari perusahaan global, digunakan di berbagai negara.",
             link: "http://pdm.pindad.co.id/kmn",
@@ -154,16 +154,16 @@ function LandingPage() {
 
             {/* Tampilan Sebelah Kiri */}
             <div className="relative bg-[#283739] flex h-[280px] shrink-0 flex-col items-center justify-center gap-4 p-8 lg:h-screen lg:w-1/3 2xl:w-1/2 xl:w-1/3 lg:items-start lg:justify-start lg:gap-[10%]">
-                <img src={LogoPindad} alt="Logo Pindad Persero" className="w-40 lg:44 xl:w-52" />
+                <img src={LogoPindad} alt="Logo Pindad Persero" className="w-40 lg:44 xl:w-52 invert brightness-0 contrast-200" />
                 <div className="flex flex-col gap-4 text-center lg:text-left h-[50%] justify-center " >
-                    <h1 className="text-xl font-medium tracking-widest text-[#50C9CE] lg:text-5xl xl:text-7xl">
-                        Pindad Solid Works
+                    <h1 className="text-xl font-medium tracking-widest text-white lg:text-5xl xl:text-5xl 2xl:text-7xl">
+                        Pindad
                     </h1>
-                    <h1 className="text-xl font-medium tracking-widest text-[#50C9CE] lg:text-5xl xl:text-7xl">
-                        PDM
+                    <h1 className="text-xl font-medium tracking-widest text-white lg:text-5xl xl:text-5xl 2xl:text-7xl">
+                        Solid Works PDM
                     </h1>
                 </div>
-                <p className="absolute w-full text-center bottom-5 left-1/2 hidden -translate-x-1/2 text-sm tracking-widest text-[#50C9CE] lg:block lg:bottom-0">
+                <p className="absolute w-full text-center bottom-5 left-1/2 hidden -translate-x-1/2 text-sm tracking-widest text-white lg:block lg:bottom-0">
                     &copy; 2025 Divisi Teknologi Informasi PT.Pindad(Persero)
                 </p>
             </div>
