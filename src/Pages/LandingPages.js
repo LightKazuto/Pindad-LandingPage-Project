@@ -67,24 +67,7 @@ function LandingPage() {
             title: <>Industrial <br /><br /></>,
             id: "003",
             category: "Proses produksi barang atau jasa dalam skala besar",
-            children: [
-                {
-                    img: Production,
-                    title: "Production",
-                    link: "http://pdm.pindad.co.id/engmri",
-                    id: "001",
-                    category:
-                        "Proses menghasilkan produk massal melalui perencanaan, pengolahan, dan pengawasan.",
-                },
-                {
-                    img: Litbang,
-                    title: "Lit bang",
-                    link: "http://pdm.pindad.co.id/bpmri",
-                    id: "002",
-                    category:
-                        "Mengembangkan inovasi produk melalui riset, eksperimen, dan analisis berkelanjutan.",
-                },
-            ],
+            link: "http://pdm.pindad.co.id/engmri",
         },
         {
             img: Munisi,
