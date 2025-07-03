@@ -8,8 +8,8 @@ function Page500() {
     return (
         <div className="w-full h-screen bg-[#283739]">
             <div className="w-full h-screen flex flex-col justify-center items-center gap-8">
-                <div className="flex lg:flex-row flex-col gap-6 w-full items-center ">
-                    <div className="pr-6 border-b-4 lg:border-b-0 lg:border-r-8 border-white p-4">
+                <div className="flex lg:flex-row flex-col gap-6 ">
+                    <div className="pr-6 border-b-4 lg:border-b-0 lg:border-r-8 border-white p-4 items-center justify-center flex">
                         <img src={LogoPindad} alt="404" className="invert brightness-0 contrast-200 w-52 lg:w-96 h-auto p-4" />
                     </div>
                     <div className="text-white w-full lg:w-1/2 flex flex-col font-semibold font-mono lg:items-start items-center justify-center p-0 lg:p-4 gap-2">
